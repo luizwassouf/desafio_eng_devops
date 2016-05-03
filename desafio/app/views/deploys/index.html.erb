@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Deploys</h1>
+<h1>Listando Deploys</h1>
 
 <table>
   <thead>
     <tr>
       <th>Componente</th>
-      <th>Versao</th>
-      <th>Responsavel</th>
+      <th>Versão</th>
+      <th>Responsável</th>
       <th>Status</th>
       <th>Criado em</th>
       <th>Atualizado em</th>
@@ -24,9 +24,9 @@
         <td><%= deploy.status %></td>
         <td><%= deploy.created_at %></td>
         <td><%= deploy.updated_at %></td>
-        <td><%= link_to 'Show', deploy %></td>
-        <td><%= link_to 'Edit', edit_deploy_path(deploy) %></td>
-        <td><%= link_to 'Destroy', deploy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', deploy %></td>
+        <td><%= link_to 'Editar', edit_deploy_path(deploy) %></td>
+        <td><%= link_to 'Destruir', deploy, method: :delete, data: { confirm: 'Tem Certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Deploy', new_deploy_path %>
+<%= link_to 'Realizar novo Deploy', new_deploy_path %>

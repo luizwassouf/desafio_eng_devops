@@ -28,7 +28,7 @@ class DeploysController < ApplicationController
 
     respond_to do |format|
       if @deploy.save
-        format.html { redirect_to @deploy, notice: 'Deploy was successfully created.' }
+        format.html { redirect_to @deploy, notice: 'Deploy criado!' }
         format.json { render :show, status: :created, location: @deploy }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DeploysController < ApplicationController
   def update
     respond_to do |format|
       if @deploy.update(deploy_params)
-        format.html { redirect_to @deploy, notice: 'Deploy was successfully updated.' }
+        format.html { redirect_to @deploy, notice: 'Deploy atualizado!' }
         format.json { render :show, status: :ok, location: @deploy }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DeploysController < ApplicationController
   def destroy
     @deploy.destroy
     respond_to do |format|
-      format.html { redirect_to deploys_url, notice: 'Deploy was successfully destroyed.' }
+      format.html { redirect_to deploys_url, notice: 'Deploy destruído!' }
       format.json { head :no_content }
     end
   end
