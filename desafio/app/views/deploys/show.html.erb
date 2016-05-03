@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Componente:</strong>
+  <%= @deploy.componente %>
+</p>
+
+<p>
+  <strong>Versao:</strong>
+  <%= @deploy.versao %>
+</p>
+
+<p>
+  <strong>Responsavel:</strong>
+  <%= @deploy.responsavel %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @deploy.status %>
+</p>
+
+<%= link_to 'Edit', edit_deploy_path(@deploy) %> |
+<%= link_to 'Back', deploys_path %>
