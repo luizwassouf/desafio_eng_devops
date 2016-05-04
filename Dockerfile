@@ -1,9 +1,15 @@
-FROM lwassouf/desafio_eng_devops:0.1
-# Install vim.
-RUN apt-get update && apt-get install -y vim
+FROM ubuntu:14.04
+
+# Initial configuration
+RUN \
+  apt-get update && \
+  apt-get upgrade -y && \
+  apt-get install curl -y
+
 
 # Define default command.
 CMD ["ls"]
 
 # Expose ports.
 EXPOSE 80
+EXPOSE 3000
