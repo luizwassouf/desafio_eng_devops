@@ -34,4 +34,11 @@
 
 <br>
 
-<%= link_to 'Realizar novo Deploy', new_deploy_path %>
+<%= link_to 'Incluir novo Deploy', new_deploy_path %>
+
+
+<p>
+  Download:
+  <%= link_to "CSV", deploys_path(format: "csv") %> |
+  <%= link_to "Excel", deploys_path(format: "xls") %>
+</p>

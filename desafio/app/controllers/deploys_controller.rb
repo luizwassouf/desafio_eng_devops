@@ -5,6 +5,11 @@ class DeploysController < ApplicationController
   # GET /deploys.json
   def index
     @deploys = Deploy.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @deploys.to_csv }
+      format.xls # { send_data @products.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /deploys/1
