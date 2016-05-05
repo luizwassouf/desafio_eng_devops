@@ -9,6 +9,7 @@ Imagem base do Docker: **Ubuntu:14.04**
 2 - Faça o Build dos Dockerfiles da aplicação e da base de dados
 
 2.1 - `sudo docker build -f ./Dockerfile.db -t db .`
+
       `sudo docker build -f ./Dockerfile.app -t web .`
 
 3 - Rode o container da base de dados
@@ -17,7 +18,8 @@ Imagem base do Docker: **Ubuntu:14.04**
 
 4 - Rode o container da aplicação
 
-4.1 - Crie a base de dados: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:create"``
+4.1 - Crie a base de dados: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:create"`
+
                             `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:setup"`
 
 4.2 - Inicialize a aplicação: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rails s -b 0.0.0.0"`
