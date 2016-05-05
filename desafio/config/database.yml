@@ -21,6 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: db
+  template: template0
   username: desafio
   password: password1
 
