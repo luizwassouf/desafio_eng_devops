@@ -1,3 +1,9 @@
 == README
 
 Esta aplicação tem como finalidade medir o tempo gasto em cada etapa do processo de deploy da aplicação para a qual ele for designado.
+
+Versão do Ruby: 2.2.0
+Versão do Rails: 4.2.0
+
+Na aplicação, você pode incluir um novo deploy, assim como modificá-lo, ver detalhes e excluí-lo.
+Há a possibilidade de baixar o seu relatório em csv ou xls.
