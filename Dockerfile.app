@@ -27,16 +27,18 @@
     libtool \
     bison \
     nodejs \
-    postgresql \
-    postgresql-contrib \
-    postgresql-server-dev-* \
     git \
     git-svn \
     gitk \
     ssh \
+    postgresql \
+    postgresql-contrib \
+    postgresql-server-dev-* \
     libssh-dev
 
+
   # Add user `rails`
+  USER root
   RUN \
     adduser --gecos 'Rails app user' --disabled-password rails && \
     echo "rails ALL = NOPASSWD: /usr/bin/apt-get" >> /etc/sudoers
@@ -60,11 +62,17 @@
     gem install rails:4.2.0 "
 
   # Clone our private GitHub Repository
-  RUN git clone -b master https://github.com/luizwassouf/desafio_eng_devops.git /home/rails/desafio_eng_devops
+  RUN git clone https://github.com/luizwassouf/desafio_eng_devops.git ~/desafio_eng_devops/
 
-  # Define default command.
-  CMD ["/bin/bash"]
+  # Changing WORKDIR to /home/rails/desafio_eng_devops
+  WORKDIR /home/rails/desafio_eng_devops/desafio
+
+  RUN /bin/bash -l -c "\
+    source /home/rails/.rvm/scripts/rvm && \
+    bundle install "
+
 
   # Expose ports.
   EXPOSE 80
   EXPOSE 3000
+  EXPOSE 5432
