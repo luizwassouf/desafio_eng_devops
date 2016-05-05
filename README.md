@@ -12,15 +12,15 @@ Imagem base do Docker: **Ubuntu:14.04**
 
       `sudo docker build -f ./Dockerfile.app -t web .`
 
-3 - Rode o container da base de dados
+3 - Execute o container da base de dados
 
 3.1 - `sudo docker run -d --name pgsql db`
 
-4 - Rode o container da aplicação
+4 - Execute o container da aplicação
 
-4.1 - Crie a base de dados: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:create"`
+4.1 - Crie a base de dados *somente na primeira execução*: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:create"`
 
-                            `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:setup"`
+`sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rake db:setup"`
 
 4.2 - Inicialize a aplicação: `sudo docker run -d --link pgsql:db web /bin/bash -l -c "source /home/rails/.rvm/scripts/rvm && rails s -b 0.0.0.0"`
 
